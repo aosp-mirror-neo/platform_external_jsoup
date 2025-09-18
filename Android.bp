@@ -1,7 +1,17 @@
-// TODO(b/339595939): Remove this module after the next ATF release which would no longer require jsoup.
+package {
+    default_applicable_licenses: ["external_jsoup_license"],
+}
+
+license {
+    name: "external_jsoup_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-MIT"],
+    license_text: ["LICENSE"],
+}
+
 java_library_static {
     name: "jsoup",
+    host_supported: true,
     srcs: ["src/main/java/**/*.java"],
     static_libs: ["jspecify"],
-    visibility: ["//external/accessibility-test-framework"],
 }
